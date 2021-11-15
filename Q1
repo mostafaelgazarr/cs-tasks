@@ -1,0 +1,50 @@
+public class Time {
+    public static void main (String(] args) {
+            
+           MyTime timel = new MyTime();
+                   System.out.println(timel.getHour()+":"+time1.getMinute()+":" + timel.getSecond());
+                   
+           MyTime time2 = new MyTime(555550000);
+                   System.out.println(time2.getHour)+":"+time2.getMinute() + ":" + time2.getSecond());
+                   
+           MyTime time3 = new MyTime(10, 33, 50);
+                   System.out.println(time3.getHour)+":"+time3.getMinute() + ":" + time3.getSecond());
+                   
+   }
+  }
+ class MyTime{
+private int hour;
+private int minute;
+private int second;
+  
+    public MyTime(){
+            this(System.currentTimeMillis());
+  }
+    public MyTime(long elapsedTime) {
+            setTime(elapsedTime);
+}
+public MyTime(int hour, int minute, int second) {
+      this.hour = hour;
+      this.minute = minute;
+      this.second = second;
+}
+public int getHour() {
+  return hour;
+}
+public int getMinute(){
+   return minute;
+}
+public int getsecond(){
+   return second;
+}
+ public void setTime (long elapsedTime) {
+        long totalSeconds = elapsedTime / 1000;
+           second = (int)(totalSeconds % 60);
+              long totalMinutes = totalSeconds / 60;
+                   minute = (int) (totalMinutes % 60);
+                   
+int totalHours= (int) (totalMinutes / 60);
+
+      hour = (int) (totalHours % 24);
+}
+}
